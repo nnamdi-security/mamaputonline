@@ -836,6 +836,13 @@ TRUST LIST
     border-radius: 15px;
 
     box-shadow: var(--shadow);
+
+     background:
+    linear-gradient(
+        135deg,
+        var(--primary-red),
+        #5e0000
+    );
 }
 
 .form-group {
