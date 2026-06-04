@@ -636,6 +636,167 @@ TRUST LIST
 }
 
 
+<<<<<<< HEAD
+=======
+/* =====================================
+   REVIEWS SECTION
+===================================== */
+
+.reviews {
+
+    padding: 5rem 1rem;
+
+    background: var(--cream);
+}
+
+.reviews-header {
+
+    max-width: 700px;
+
+    text-align: center;
+
+    margin: 0 auto 3rem;
+}
+
+.review-slider-container {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    position: relative;
+}
+
+.review-slider {
+
+    display: flex;
+
+    overflow: hidden;
+}
+
+.review-card {
+
+    min-width: 100%;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+.review-card img {
+
+    width: 100px;
+
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+.review-btn {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: var(--primary-red);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+}
+
+/*LEFT BUTTON*/
+.prev-btn {
+
+    left: -25px;
+}
+
+/*RIGHT BUTTON*/
+.next-btn {
+
+    right: -25px;
+}
+
+/*DOT INDICATORS*/
+.review-dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    margin-top: 2rem;
+}
+
+.review-dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #ccc;
+}
+
+.review-dot.active {
+
+    background: var(--secondary-gold);
+}
+
+
+/* =====================================
+   CONTACT SECTION
+===================================== */
+
+.contact {
+
+    padding: 5rem 1rem;
+
+    background: white;
+}
+
+.contact-header {
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 3rem;
+}
+>>>>>>> fe528d78c9c2d4b6793f3a82ebdd321d3cc556cb
 
 
 
@@ -670,6 +831,10 @@ TABLET BREAKPOINT
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe528d78c9c2d4b6793f3a82ebdd321d3cc556cb
 /*
 ===========================
 DESKTOP BREAKPOINT
