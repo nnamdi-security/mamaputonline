@@ -795,12 +795,115 @@ TRUST LIST
     margin: 0 auto 3rem;
 }
 
+.contact-container {
+
+    display: grid;
+
+    gap: 2rem;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+.contact-info {
+
+    background: var(--primary-red);
+
+    color: white;
+
+    padding: 2rem;
+
+    border-radius: 15px;
+}
+
+.contact-info h3 {
+
+    margin-bottom: 2rem;
+}
+
+.info-item {
+
+    margin-bottom: 1.5rem;
+}
+
+.contact-form {
+
+    background: white;
+
+    padding: 2rem;
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    outline: none;
+
+    border-color: var(--secondary-gold);
+
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+.submit-btn {
+
+    background: var(--primary-red);
+
+    color: white;
+
+    border: none;
+
+    padding: 1rem 2rem;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
 
 
+.submit-btn:hover {
 
+    background: var(--secondary-gold);
 
-
-
+    color: #000;
+}
 
 
 
@@ -824,6 +927,13 @@ TABLET BREAKPOINT
     .services-grid {
 
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-container {
+
+        grid-template-columns: 1fr 2fr;
+
+        align-items: center;
     }
 }
 
@@ -877,6 +987,13 @@ DESKTOP BREAKPOINT
     .services-grid {
 
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contact-container {
+
+        grid-template-columns: 1fr 2fr;
+
+        align-items: center;
     }
 }
 
