@@ -1,0 +1,723 @@
+/*Reseting default browser spacing*/
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+===================
+CSS VARIABLES
+===================
+*/
+:root {
+    /*COLORS*/
+    --primary-red: #8B0000;
+    --secondary-gold: #D4AF37;
+
+    --white: #ffffff;
+    --cream: #FFF8F0;
+
+    --shadow: 0 4px 12px rgba(0,,0,0,0.15);
+    --transition: 0.5s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cream);
+}
+
+/*FLOATING NAVBAR*/
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+/* Floating card effect */
+.navbar {
+    background: var(--primary-red);
+    border-radius: 124px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/*LOGO*/
+.logo {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*NAVIGATION LINKS*/
+.nav-links {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-gold);
+}
+
+/*
+=======================
+SEARCH AREA
+=======================
+*/
+.search-container {
+    display: none;
+    gap: 0.5rem;
+}
+
+.search-container input {
+    padding: 0.6rem;
+    border: none;
+    border-radius: 6px;
+}
+
+.search-container button {
+    border: none;
+    padding: 0.6rem 1rem;
+    background: var(--secondary-gold);
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+
+/*
+================
+HAMBURGER BUTTON
+================
+*/
+.hamburger {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/*
+=================
+HERO SECTION
+=================
+*/
+.hero {
+    min-height: 70vh;
+    padding: 2rem 1rem;
+    background: 
+        linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)
+        ),
+        url("../images/hero-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;    
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =====================================
+   SLIDER
+===================================== */
+.slider-container {
+    position: relative;
+}
+
+.slider {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* DOTS */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.dot.active {
+    background: var(--secondary-gold);
+}
+
+
+/* CONTENT STYLING */
+.hero-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+    background: var(--secondary-gold);
+    color: black;
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+/* SECONDARY BUTTON */
+.btn-secondary {
+    background: white;
+    color: var(--primary-red);
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+}
+
+/* =====================================
+   ABOUT SECTION
+===================================== */
+.about {
+    padding: 4rem 1rem;
+    background: var(--white);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+/*
+=======================
+IMAGE STYLING
+=======================
+*/
+.about-image img {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+/*
+=======================
+CONTENT STYLING
+=======================
+*/
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/*
+=======================
+SECTION TAG
+=======================
+*/
+.section-tag {
+    color: var(--secondary-gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*
+=======================
+HEADING
+=======================
+*/
+.about-content h2 {
+    color: var(--primary-red);
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+/*
+=======================
+PARAGRAPH
+=======================
+*/
+.about-content p {
+    line-height: 1.8;
+    color: #444;
+}
+
+/*
+=======================
+ABOUT CARDS
+=======================
+*/
+.about-card {
+    background: var(--cream);
+    padding: 1.5rem;
+    border-left: 5px solid var(--secondary-gold);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/*
+=======================
+CARD HEADINGS
+=======================
+*/
+.about-card h3 {
+    color: var(--primary-red);
+    margin-bottom: 0.75rem;
+}
+
+/*
+=======================
+TRUST LIST
+=======================
+*/
+.about-card ul {
+    padding-left: 1.25rem;
+}
+
+.about-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* =====================================
+   MENU SECTION
+===================================== */
+.menu-container {
+    padding: 4rem 1rem;
+    background: var(--cream);
+}
+
+.menu-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+/*LAYOUT CONTAINER*/
+.menu-layout{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/*SIDEBAR*/
+.menu-sidebar {
+    background: var(--primary-red);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+/*SIDEBAR LINKS*/
+.menu-sidebar ul {
+    list-style: none;
+}
+
+.menu-sidebar li {
+    margin-bottom: 1rem;
+}
+
+.menu-sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.menu-sidebar a:hover {
+    background: var(--secondary-gold);
+    color: black;
+}
+
+/*FOOD CATEGORY*/
+.food-category {
+
+    margin-bottom: 4rem;
+}
+
+.food-category h3 {
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 140PX;  /*When scrolling to me, stop 140px earlier.*/
+}
+
+/*FOOD GRID*/
+.food-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/*FOOD CARD*/
+.food-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+/* =====================================
+   SPECIAL COMBO CARDS
+===================================== */
+
+.special-card {
+
+    border: 2px solid var(--secondary-gold);
+
+    position: relative;
+}
+
+.featured-badge {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    background: var(--secondary-gold);
+
+    color: #000;
+
+    padding: 0.35rem 0.75rem;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+}
+
+/*CARD HOVER EFFECT*/
+.food-card:hover {
+    transform: translateY(-6px);
+}
+
+/*CARD IMAGES*/
+.food-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/*CARD CONTENT*/
+.food-card h4 {
+    color: var(--primary-red);
+    padding: 1rem 1rem 0;
+}
+
+.food-card p {
+    padding: 0 1rem;
+}
+
+/*PRICE*/
+.price {
+    color: var(--secondary-gold);
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/*FOOD ORIGIN*/
+.food-origin {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0 1rem;
+    margin-top: 0.25;
+}
+
+/*RATING*/
+.rating {
+    color: gold;
+    padding: 1rem;
+}
+
+/*ORDER BUTTON*/
+.food-card button {
+    width: calc(100% - 2rem);
+    margin-top: auto;
+    margin: 0 1rem 1rem;
+    border: none;
+    background: var(--primary-red);
+    color: white;
+    padding: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.food-card button:hover {
+    background: #6d0000;
+}
+
+/* =====================================
+   SERVICES SECTION
+===================================== */
+
+.services {
+
+    padding: 5rem 1rem;
+
+    background: var(--white);
+}
+
+.services-header {
+
+    max-width: 700px;
+
+    margin: 0 auto 3rem;
+
+    text-align: center;
+}
+
+/*SERVICES GRID*/
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+/*Services Cards*/
+.service-card {
+
+    background: white;
+
+    padding: 2rem;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+.service-card:hover {
+
+    transform: translateY(-8px);
+}
+
+/*SERVICES ICONS*/
+.service-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    margin: 0 auto 1rem;
+
+    border-radius: 50%;
+
+    background: var(--primary-red);
+
+    color: white;
+
+    font-size: 2rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.service-card h3 {
+
+    color: var(--primary-red);
+
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+===========================
+TABLET BREAKPOINT
+===========================
+*/
+@media(min-width: 768px){
+    .search-container{
+        display: flex;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .services-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/*
+===========================
+DESKTOP BREAKPOINT
+===========================
+*/
+@media(min-width: 1024px){
+
+    .container {
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+
+    .nav-links{
+        display: flex;
+        flex-direction: row;
+    }
+    .search-container{
+        display: flex;
+    }
+    .hamburger {
+        display: none;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu-layout {
+        grid-template-columns: 250px 1fr;
+    }
+
+.menu-sidebar {
+        position: sticky;
+        top: 120px;
+    }
+
+    .services-grid {
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
