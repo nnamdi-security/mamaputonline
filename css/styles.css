@@ -1077,7 +1077,111 @@ main {
     flex: 1;
 }
 
+.footer-social a {
 
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.1);
+
+    font-size: 1.2rem;
+
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background: var(--secondary-gold);
+    color: black;
+    transform: translateY(-5px);
+}
+
+/*BACK TO TOP BUTTON*/
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--secondary-gold);
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+}
+
+#backToTop {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+.food-card:hover,
+.service-card:hover,
+.review-card:hover {
+
+    transform: 
+        translateY(-10px)
+        scale(1.02);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);    
+}
+
+
+.hero-buttons a:hover,
+.food-card button:hover,
+.submit-btn:hover {
+
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.reveal:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.reveal:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.reveal:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.reveal:nth-child(4) {
+    transition-delay: 0.4s;
+}
 
 
 

@@ -1,6 +1,8 @@
 /* =====================================
    REVIEW SLIDER
 ===================================== */
+console.log("JavaScript Connected Successfully");
+
 const reviewSlider =
     document.querySelector(".review-slider");
 
@@ -8,7 +10,7 @@ const reviewCards =
     document.querySelectorAll(".review-card");
 
 const reviewDots =
-    document.querySelectorAll(".review-dots");
+    document.querySelectorAll(".review-dot");
 
 const prevBtn =
     document.querySelector(".prev-btn");
@@ -77,3 +79,43 @@ setInterval(()=>{
     showReview(currentReview);
 },
 5000);
+
+/*BACK TO TOP BUTTON*/
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 500) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+
+        behavior: "smooth"
+    });
+});
+
+
+/* =====================================
+   SCROLL REVEAL
+===================================== */
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
+
+revealElements.forEach((element) => observer.observe(element));
