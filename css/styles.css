@@ -597,8 +597,8 @@ TRUST LIST
     transform: translateY(-8px);
 }
 
-/*SERVICES ICONS*/
-.service-icon {
+/*SERVICES ICONS
+.service-ico {
 
     width: 80px;
 
@@ -619,6 +619,13 @@ TRUST LIST
     justify-content: center;
 
     align-items: center;
+}
+*/
+.service-icon img {
+    width: 120px;
+    height: 80px;
+    border-radius: 20px;
+    border: 2px solid var(--primary-red);
 }
 
 .service-card h3 {
