@@ -119,3 +119,372 @@ const observer = new IntersectionObserver(
 );
 
 revealElements.forEach((element) => observer.observe(element));
+
+
+
+
+/* =====================================
+   HERO IMAGE SLIDER
+
+
+const heroSlides =
+document.querySelector(".hero-slides");
+
+const heroImages =
+document.querySelectorAll(".hero-slides img");
+
+const heroDots =
+document.querySelectorAll(".hero-dot");
+
+let currentHeroSlide = 0;
+
+
+
+
+
+function showHeroSlide(index) {
+
+    heroSlides.style.transform =
+        `translateX(-${index * 100}%)`;
+
+    heroDots.forEach(dot => {
+
+        dot.classList.remove("active");
+
+    });
+
+    heroDots[index]
+        .classList.add("active");
+}
+
+
+
+
+function nextHeroSlide() {
+
+    currentHeroSlide++;
+
+    if (
+        currentHeroSlide >=
+        heroImages.length
+    ) {
+
+        currentHeroSlide = 0;
+    }
+
+    showHeroSlide(
+        currentHeroSlide
+    );
+}
+
+
+
+
+setInterval(() => {
+
+    nextHeroSlide();
+
+}, 3000);
+
+
+
+
+heroDots.forEach(
+    (dot, index) => {
+
+        dot.addEventListener(
+            "click",
+
+            () => {
+
+                currentHeroSlide =
+                    index;
+
+                showHeroSlide(
+                    currentHeroSlide
+                );
+
+            }
+
+        );
+
+    }
+);
+
+
+
+
+console.log(heroSlides);
+console.log(heroImages);
+console.log(heroDots);
+
+
+const slides =
+document.querySelectorAll(".slide");
+
+const dots =
+document.querySelectorAll(".hero-dot");
+
+let currentSlide = 0;
+
+
+function showSlide(index) {
+
+    slides.forEach(slide => {
+
+        slide.classList.remove("active");
+
+    });
+
+    dots.forEach(dot => {
+
+        dot.classList.remove("active");
+
+    });
+
+    slides[index].classList.add("active");
+
+    dots[index].classList.add("active");
+}
+
+
+
+function nextSlide() {
+
+    currentSlide++;
+
+    if(currentSlide >= slides.length){
+
+        currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+}
+
+
+setInterval(() => {
+
+    nextSlide();
+
+}, 3000);
+
+
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        currentSlide = index;
+
+        showSlide(currentSlide);
+
+    });
+
+});
+
+
+
+
+
+
+===================================== */
+
+
+/* =====================================
+   HERO SLIDER
+===================================== */
+
+const heroSlides =
+document.querySelector(".hero-slides");
+
+const heroDots =
+document.querySelectorAll(".hero-dot");
+
+const heroPrev =
+document.querySelector(".hero-prev");
+
+const heroNext =
+document.querySelector(".hero-next");
+
+
+let currentSlide = 0;
+
+const totalSlides = heroDots.length;
+
+
+function showSlide(index) {
+
+    heroSlides.style.transform =
+        `translateX(-${index * 100}%)`;
+
+    heroDots.forEach(dot => {
+
+        dot.classList.remove("active");
+
+    });
+
+    heroDots[index]
+        .classList.add("active");
+}
+
+
+
+function nextSlide() {
+
+    currentSlide++;
+
+    if (
+        currentSlide >= totalSlides
+    ) {
+
+        currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+}
+
+
+
+function previousSlide() {
+
+    currentSlide--;
+
+    if (
+        currentSlide < 0
+    ) {
+
+        currentSlide =
+            totalSlides - 1;
+    }
+
+    showSlide(currentSlide);
+}
+
+
+
+let sliderInterval =
+setInterval(nextSlide, 3000);
+
+
+heroNext.addEventListener(
+    "click",
+
+    () => {
+
+        nextSlide();
+
+    }
+);
+
+
+
+
+heroPrev.addEventListener(
+    "click",
+
+    () => {
+
+        previousSlide();
+
+    }
+);
+
+
+
+heroDots.forEach(
+    (dot, index) => {
+
+        dot.addEventListener(
+
+            "click",
+
+            () => {
+
+                currentSlide =
+                    index;
+
+                showSlide(
+                    currentSlide
+                );
+
+            }
+
+        );
+
+    }
+);
+
+
+
+const heroSlider =
+document.querySelector(
+    ".hero-slider"
+);
+
+
+
+heroSlider.addEventListener(
+
+    "mouseenter",
+
+    () => {
+
+        clearInterval(
+            sliderInterval
+        );
+
+    }
+
+);
+
+
+
+heroSlider.addEventListener(
+
+    "mouseleave",
+
+    () => {
+
+        sliderInterval =
+        setInterval(
+            nextSlide,
+            3000
+        );
+
+    }
+
+);
+
+
+
+document.addEventListener(
+
+    "keydown",
+
+    (event) => {
+
+        if (
+            event.key ===
+            "ArrowRight"
+        ) {
+
+            nextSlide();
+
+        }
+
+        if (
+            event.key ===
+            "ArrowLeft"
+        ) {
+
+            previousSlide();
+
+        }
+
+    }
+
+);
+
+
+
+showSlide(0);
