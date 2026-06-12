@@ -61,6 +61,19 @@ body {
     cursor: pointer;
 }
 
+.logo img {
+    width: 140px;
+    height: 80px;
+    border-radius: 1rem;
+    margin-left: 10rem;
+}
+
+.logo-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 /*NAVIGATION LINKS*/
 .nav-links {
     list-style: none;
