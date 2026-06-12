@@ -12,10 +12,10 @@ const reviewCards =
 const reviewDots =
     document.querySelectorAll(".review-dot");
 
-const prevBtn =
+const preReviewvBtn =
     document.querySelector(".prev-btn");
 
-const nextBtn =
+const nextReviewBtn =
     document.querySelector(".next-btn");
 
 
@@ -29,8 +29,6 @@ function showReview(index) {
     reviewSlider.style.transform =
         `translateX(-${index * 100}%)`;
 
-    reviewSlider.style.transition =
-        "0.5s ease";
 
     reviewDots.forEach(dot => {
         dot.classList.remove("active");
@@ -41,7 +39,7 @@ function showReview(index) {
 }
 
 /*NEXT BUTTON*/
-nextBtn.addEventListener("click", ()=>{
+nextReviewBtn.addEventListener("click", ()=>{
 
     currentReview++;
 
@@ -54,7 +52,7 @@ nextBtn.addEventListener("click", ()=>{
 });
 
 /*PREVIOUS BUTTON*/
-prevBtn.addEventListener("click", ()=>{
+prevReviewBtn.addEventListener("click", ()=>{
 
     currentReview--;
 
@@ -66,8 +64,22 @@ prevBtn.addEventListener("click", ()=>{
     showReview(currentReview);
 });
 
+
+/*DOT NAVIGATION*/ 
+reviewDots.forEach((dot, index) => {
+
+    dot.addEventListener("click", () => {
+
+        currentReview = index;
+
+        showReview(currentReview);
+
+    });
+
+});
+
 /*AUTO SLIDE*/
-setInterval(()=>{
+function nextReview() {
 
     currentReview++;
 
@@ -77,8 +89,45 @@ setInterval(()=>{
     }
 
     showReview(currentReview);
-},
-5000);
+}
+
+let reviewInterval =
+    setInterval(nextReview, 5000);
+
+/* PAUSE ON HOVER */    
+const reviewContainer =
+    document.querySelector(
+        ".review-slider-container"
+    );
+
+/* STOP AUTOPLAY */
+reviewContainer.addEventListener(
+
+    "mouseenter",
+
+    () => {
+
+        clearInterval(reviewInterval);
+
+    }
+
+);
+
+reviewContainer.addEventListener(
+
+    "mouseleave",
+
+    () => {
+
+        reviewInterval =
+            setInterval(
+                nextReview,
+                5000
+            );
+
+    }
+
+);
 
 /*BACK TO TOP BUTTON*/
 const backToTop = document.getElementById("backToTop");
