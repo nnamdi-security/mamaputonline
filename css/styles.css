@@ -171,71 +171,43 @@ HERO SECTION
     position: relative;
     height: 350px;
     overflow: hidden;
-    border-radius: 20px;
-}
-
-
-
-.slider-container {
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 20px;
-}
-
-.hero-slides {
-
-    display: flex;
-
-    transition: transform 0.7s ease;
+    border-radius: 15px;
 }
 
 .slide {
-
-    min-width: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
+.slide.active {
+    opacity: 1;
+}
 
 .slide img {
-
     width: 100%;
-
-    aspect-ratio: 4 / 3;
-
+    height: 100%;
     object-fit: cover;
-
-    display: block;
 }
 
 /* DOTS */
-.hero-dots {
+.slider-dots {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1rem;
 }
 
-.hero-dot {
+.dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(
-        255,
-        255,
-        255,
-        0.4
-    );
-
-    cursor: pointer;
-
-    transition: 0.3s;
+    background: #ccc;
 }
 
-.hero-dot.active {
+.dot.active {
     background: var(--secondary-gold);
-    transform: scale(1.2);
 }
 
 
