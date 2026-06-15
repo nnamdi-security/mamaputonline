@@ -171,43 +171,71 @@ HERO SECTION
     position: relative;
     height: 350px;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 20px;
+}
+
+
+
+.slider-container {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+}
+
+.hero-slides {
+
+    display: flex;
+
+    transition: transform 0.7s ease;
 }
 
 .slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.8s ease;
+
+    min-width: 100%;
 }
 
-.slide.active {
-    opacity: 1;
-}
 
 .slide img {
+
     width: 100%;
-    height: 100%;
+
+    aspect-ratio: 4 / 3;
+
     object-fit: cover;
+
+    display: block;
 }
 
 /* DOTS */
-.slider-dots {
+.hero-dots {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1rem;
 }
 
-.dot {
+.hero-dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #ccc;
+    background: rgba(
+        255,
+        255,
+        255,
+        0.4
+    );
+
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-.dot.active {
+.hero-dot.active {
     background: var(--secondary-gold);
+    transform: scale(1.2);
 }
 
 
