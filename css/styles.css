@@ -86,6 +86,23 @@ body {
     text-decoration: none;
     color: var(--white);
     transition: var(--transition);
+    position: relative;
+}
+
+/*Underline*/
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .nav-links a:hover {
@@ -292,6 +309,22 @@ HERO SECTION
 
 .btn-secondary:hover {
     transform: translateY(-3px);
+}
+
+/*CTA Button Improvement*/
+.btn {
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3sease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 /* =====================================
