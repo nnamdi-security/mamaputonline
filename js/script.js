@@ -1,294 +1,3 @@
-/* =====================================
-   REVIEW SLIDER
-===================================== */
-console.log("JavaScript Connected Successfully");
-
-const reviewSlider =
-    document.querySelector(".review-slider");
-
-const reviewCards =
-    document.querySelectorAll(".review-card");
-
-const reviewDots =
-    document.querySelectorAll(".review-dot");
-
-const prevBtn =
-    document.querySelector(".prev-btn");
-
-const nextBtn =
-    document.querySelector(".next-btn");
-
-
-let currentReview = 0;
-
-
-
-
-function showReview(index) {
-
-    reviewSlider.style.transform =
-        `translateX(-${index * 100}%)`;
-
-    reviewSlider.style.transition =
-        "0.5s ease";
-
-    reviewDots.forEach(dot => {
-        dot.classList.remove("active");
-    });
-
-    reviewDots[index]
-        .classList.add("active");
-}
-
-/*NEXT BUTTON*/
-nextBtn.addEventListener("click", ()=>{
-
-    currentReview++;
-
-    if(currentReview >= reviewCards.length){
-
-        currentReview = 0;
-    }
-    
-    showReview(currentReview);
-});
-
-/*PREVIOUS BUTTON*/
-prevBtn.addEventListener("click", ()=>{
-
-    currentReview--;
-
-    if(currentReview < 0){
-
-        currentReview = reviewCards.length - 1;
-    }
-
-    showReview(currentReview);
-});
-
-/*AUTO SLIDE*/
-setInterval(()=>{
-
-    currentReview++;
-
-    if(currentReview >= reviewCards.length){
-
-        currentReview = 0;
-    }
-
-    showReview(currentReview);
-},
-5000);
-
-/*BACK TO TOP BUTTON*/
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-    if(window.scrollY > 500) {
-        backToTop.classList.add("show");
-    } else {
-        backToTop.classList.remove("show");
-    }
-});
-
-backToTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-
-        behavior: "smooth"
-    });
-});
-
-
-/* =====================================
-   SCROLL REVEAL
-===================================== */
-const revealElements = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-            }
-        });
-    },
-    {
-        threshold: 0.2
-    }
-);
-
-revealElements.forEach((element) => observer.observe(element));
-
-
-
-
-/* =====================================
-   HERO IMAGE SLIDER
-
-
-const heroSlides =
-document.querySelector(".hero-slides");
-
-const heroImages =
-document.querySelectorAll(".hero-slides img");
-
-const heroDots =
-document.querySelectorAll(".hero-dot");
-
-let currentHeroSlide = 0;
-
-
-
-
-
-function showHeroSlide(index) {
-
-    heroSlides.style.transform =
-        `translateX(-${index * 100}%)`;
-
-    heroDots.forEach(dot => {
-
-        dot.classList.remove("active");
-
-    });
-
-    heroDots[index]
-        .classList.add("active");
-}
-
-
-
-
-function nextHeroSlide() {
-
-    currentHeroSlide++;
-
-    if (
-        currentHeroSlide >=
-        heroImages.length
-    ) {
-
-        currentHeroSlide = 0;
-    }
-
-    showHeroSlide(
-        currentHeroSlide
-    );
-}
-
-
-
-
-setInterval(() => {
-
-    nextHeroSlide();
-
-}, 3000);
-
-
-
-
-heroDots.forEach(
-    (dot, index) => {
-
-        dot.addEventListener(
-            "click",
-
-            () => {
-
-                currentHeroSlide =
-                    index;
-
-                showHeroSlide(
-                    currentHeroSlide
-                );
-
-            }
-
-        );
-
-    }
-);
-
-
-
-
-console.log(heroSlides);
-console.log(heroImages);
-console.log(heroDots);
-
-
-const slides =
-document.querySelectorAll(".slide");
-
-const dots =
-document.querySelectorAll(".hero-dot");
-
-let currentSlide = 0;
-
-
-function showSlide(index) {
-
-    slides.forEach(slide => {
-
-        slide.classList.remove("active");
-
-    });
-
-    dots.forEach(dot => {
-
-        dot.classList.remove("active");
-
-    });
-
-    slides[index].classList.add("active");
-
-    dots[index].classList.add("active");
-}
-
-
-
-function nextSlide() {
-
-    currentSlide++;
-
-    if(currentSlide >= slides.length){
-
-        currentSlide = 0;
-    }
-
-    showSlide(currentSlide);
-}
-
-
-setInterval(() => {
-
-    nextSlide();
-
-}, 3000);
-
-
-
-dots.forEach((dot,index)=>{
-
-    dot.addEventListener("click",()=>{
-
-        currentSlide = index;
-
-        showSlide(currentSlide);
-
-    });
-
-});
-
-
-
-
-
-
-===================================== */
-
 
 /* =====================================
    HERO SLIDER
@@ -488,3 +197,172 @@ document.addEventListener(
 
 
 showSlide(0);
+
+
+
+
+/* =====================================
+   REVIEW SLIDER
+===================================== */
+console.log("JavaScript Connected Successfully");
+
+const reviewSlider =
+    document.querySelector(".review-slider");
+
+const reviewCards =
+    document.querySelectorAll(".review-card");
+
+const reviewDots =
+    document.querySelectorAll(".review-dot");
+
+const prevReviewBtn =
+    document.querySelector(".prev-btn");
+
+const nextReviewBtn =
+    document.querySelector(".next-btn");
+
+
+let currentReview = 0;
+
+
+
+
+function showReview(index) {
+
+    reviewSlider.style.transform =
+        `translateX(-${index * 100}%)`;
+
+    reviewSlider.style.transition =
+        "0.5s ease";
+
+    reviewDots.forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+    reviewDots[index]
+        .classList.add("active");
+}
+
+/*NEXT BUTTON*/
+nextReviewBtn.addEventListener("click", ()=>{
+
+    currentReview++;
+
+    if(currentReview >= reviewCards.length){
+
+        currentReview = 0;
+    }
+    
+    showReview(currentReview);
+});
+
+/*PREVIOUS BUTTON*/
+prevReviewBtn.addEventListener("click", ()=>{
+
+    currentReview--;
+
+    if(currentReview < 0){
+
+        currentReview = reviewCards.length - 1;
+    }
+
+    showReview(currentReview);
+});
+
+/*AUTO SLIDE*/
+setInterval(()=>{
+
+    currentReview++;
+
+    if(currentReview >= reviewCards.length){
+
+        currentReview = 0;
+    }
+
+    showReview(currentReview);
+},
+5000);
+
+/*BACK TO TOP BUTTON*/
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 500) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+
+        behavior: "smooth"
+    });
+});
+
+
+/* =====================================
+   SCROLL REVEAL
+===================================== */
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
+
+revealElements.forEach((element) => observer.observe(element));
+
+
+
+
+
+
+/*
+============================
+TOUCH SWIPE SUPPORT
+============================
+*/
+const reviewContainer = document.querySelector(".review-slider-container");
+
+const nextReview = document.querySelector(".next-btn")
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+/* Select the container and create an event that listen for touch start */
+
+
+reviewContainer.addEventListener("touchStartX", (event) => {
+
+    touchStartX = event.changedTouches[0].screenX;
+})
+
+/* Listen for Touch End */
+reviewContainer.addEventListener("touchEndX", (event) => {
+
+    touchEndX = event.changedTouches[0].screenX;
+})
+
+
+/* Swipe Function */
+function handleSwipe() {
+
+    const handleSwipe = touchStartX - touchEndX;
+
+    if(swipeDistance > 50) {
+
+        nextReviewBtn
+    }
+}
