@@ -86,6 +86,23 @@ body {
     text-decoration: none;
     color: var(--white);
     transition: var(--transition);
+    position: relative;
+}
+
+/*Underline*/
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .nav-links a:hover {
@@ -294,6 +311,22 @@ HERO SECTION
     transform: translateY(-3px);
 }
 
+/*CTA Button Improvement*/
+.btn {
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3sease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
 /* =====================================
    ABOUT SECTION
 ===================================== */
@@ -484,8 +517,10 @@ TRUST LIST
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 /* =====================================
@@ -522,7 +557,10 @@ TRUST LIST
 
 /*CARD HOVER EFFECT*/
 .food-card:hover {
-    transform: translateY(-6px);
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 /*CARD IMAGES*/
@@ -531,6 +569,13 @@ TRUST LIST
     height: 220px;
     object-fit: cover;
     display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.food-card img:hover {
+
+    transform: scale(1.08);
 }
 
 /*CARD CONTENT*/
@@ -1196,15 +1241,14 @@ main {
 
 
 
-.food-card:hover,
+
 .service-card:hover,
 .review-card:hover {
 
-    transform: 
-        translateY(-10px)
-        scale(1.02);
+    transform: translateY(-10px) scale(1.02);
+      
 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);    
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);    
 }
 
 
